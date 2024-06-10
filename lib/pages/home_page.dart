@@ -2,7 +2,21 @@
 import 'package:flutter/material.dart';
 
 
+
 class HomePage extends StatelessWidget {
   
-    HomePage({Key? key}) : super(key:key);
+    const HomePage({Key? key}) : super(key:key);
+
+    @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage( 
+            image: AssetImage("go_moon/assets/images/background.jpg"),
+            ),
+        ),
+      ),
+    );
+  }
 }
