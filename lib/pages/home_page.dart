@@ -11,13 +11,22 @@ class HomePage extends StatelessWidget {
     @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _astroImageWidget(),
+      body: SafeArea(
+        child: Container(
+          child: _pageTitle() ,
+          )
+        )
     );
   }
 
 
   Widget _pageTitle(){
-    return Text("#Go Moon");
+    return const Text("#Go Moon",style: TextStyle(
+      color: Colors.white,
+      fontSize: 70,
+      fontWeight: FontWeight.w700,
+
+    ),);
   }
 
   Widget _astroImageWidget(){
@@ -28,6 +37,6 @@ class HomePage extends StatelessWidget {
             fit: BoxFit.fill,
             ),
         ),
-      ),
+      );
   }
 }
