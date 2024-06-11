@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage( 
             image: AssetImage("go_moon/assets/images/background.jpg"),
+            fit: BoxFit.cover,
             ),
         ),
       ),
