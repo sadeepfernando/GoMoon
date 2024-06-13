@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
           height: _pageHeight,
           width: _pagewidth,
           padding: EdgeInsets.symmetric(horizontal: _pagewidth*0.08),
-          child: _pageTitle() ,
+          child: _destinationDropDownWidget() ,
           )
         )
     );
@@ -48,5 +48,19 @@ class HomePage extends StatelessWidget {
             ),
         ),
       );
+  }
+
+  Widget _destinationDropDownWidget(){
+
+    List<DropdownMenuItem<String>> _Items = ['SSF Web Station', 'BUAC Web Station']
+                                            .map((e){return DropdownMenuItem(
+                                              value: e,
+                                              child: Text(e),);})
+                                              .toList();
+    return Container(
+      child: DropdownButton(
+        onChanged: (_){},
+        items: _Items ,)
+        ,);
   }
 }
