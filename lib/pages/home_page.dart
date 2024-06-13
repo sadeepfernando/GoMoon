@@ -22,7 +22,12 @@ class HomePage extends StatelessWidget {
           height: _pageHeight,
           width: _pagewidth,
           padding: EdgeInsets.symmetric(horizontal: _pagewidth*0.08),
-          child: _destinationDropDownWidget() ,
+          child:  Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+                _pageTitle(),
+                _destinationDropDownWidget()
+            ],) ,
           )
         )
     );
