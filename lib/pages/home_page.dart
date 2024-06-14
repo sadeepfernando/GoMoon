@@ -52,27 +52,5 @@ class HomePage extends StatelessWidget {
     // ignore: non_constant_identifier_names
     List<String> Items = ['SSF Web Station', 'BUAC Web Station'];
 
-    return Container(
-      //Container decoration
-      decoration: BoxDecoration(
-          color:const Color.fromRGBO(53, 53, 53, 1.0),
-          borderRadius: BorderRadius.circular(10)),
-
-      child: DropdownButton(
-        //Styling the dropdown button
-        underline: Container(),
-        value: Items.first,
-        dropdownColor: const Color.fromRGBO(53, 53, 53, 1.0),
-        style: const TextStyle(color: Colors.white),
-
-        onChanged: (_) {},
-        items: Items.map((e) {
-          return DropdownMenuItem(
-            value: e,
-            child: Text(e),
-          );
-        }).toList(),
-      ),
-    );
   }
 }
