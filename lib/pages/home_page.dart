@@ -24,7 +24,10 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [_pageTitle(), _destinationDropDownWidget()],
+        children: [
+          _pageTitle(), 
+          _destinationDropDownWidget(),
+          _travellersDestinationWidget()],
       ),
     )));
   }
@@ -57,5 +60,11 @@ class HomePage extends StatelessWidget {
       values: const ['SSF Web Station', 'BUAC Web Station'],
        width: _pagewidth);
 
+  }
+
+  Widget _travellersDestinationWidget(){
+    return Custondropdownbuttom(
+      values: const ['1','2','3','4'],
+       width: _pagewidth * 0.45);
   }
 }
