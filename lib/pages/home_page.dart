@@ -16,16 +16,22 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
             child: Container(
-      height: _pageHeight,
-      width: _pagewidth,
-      padding: EdgeInsets.symmetric(horizontal: _pagewidth * 0.08),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [_pageTitle(), _bookRideWidget()],
-      ),
-    )));
+                height: _pageHeight,
+                width: _pagewidth,
+                padding: EdgeInsets.symmetric(horizontal: _pagewidth * 0.08),
+                child: Stack(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [_pageTitle(), _bookRideWidget()],
+                    ),
+                   Align(
+                    
+                    child:  _astroImageWidget(),)
+                  ],
+                ))));
   }
 
   Widget _pageTitle() {
@@ -58,9 +64,11 @@ class HomePage extends StatelessWidget {
 
   Widget _astroImageWidget() {
     return Container(
+      height: _pageHeight*0.5,
+      width: _pagewidth,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/background.jpg"),
+          image: AssetImage("assets/images/background.png"),
           fit: BoxFit.fill,
         ),
       ),
@@ -88,21 +96,20 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _rideButton(){
+  Widget _rideButton() {
     return Container(
       width: _pagewidth,
+      margin: EdgeInsets.only(bottom: _pageHeight * 0.01),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10)
-        ),
-
-      child: MaterialButton(onPressed: (){},
-       child: const Text(
-        "Book Ride !",
-        style: TextStyle(
-          color: Colors.black,),
-        )
-        ),
+          color: Colors.white, borderRadius: BorderRadius.circular(10)),
+      child: MaterialButton(
+          onPressed: () {},
+          child: const Text(
+            "Book Ride !",
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          )),
     );
   }
 }
