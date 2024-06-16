@@ -1,8 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_moon/widgets/custom_DropDown_Buttom.dart';
-
-
 
 class HomePage extends StatelessWidget {
   late double _pageHeight, _pagewidth;
@@ -24,10 +23,7 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _pageTitle(), 
-          _destinationDropDownWidget(),
-          _travellersDestinationWidget()],
+        children: [_pageTitle(), _bookRideWidget()],
       ),
     )));
   }
@@ -39,6 +35,22 @@ class HomePage extends StatelessWidget {
         color: Colors.white,
         fontSize: 70,
         fontWeight: FontWeight.w700,
+      ),
+    );
+  }
+
+  Widget _bookRideWidget() {
+    return Container(
+      height: _pageHeight * 0.25,
+      child: Column(
+        //Colunm decorations
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _destinationDropDownWidget(),
+          _travellersDestinationWidget(),
+        ],
       ),
     );
   }
@@ -55,16 +67,23 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _destinationDropDownWidget() {
-    
     return Custondropdownbuttom(
-      values: const ['SSF Web Station', 'BUAC Web Station'],
-       width: _pagewidth);
-
+        values: const ['SSF Web Station', 'BUAC Web Station'],
+        width: _pagewidth);
   }
 
-  Widget _travellersDestinationWidget(){
-    return Custondropdownbuttom(
-      values: const ['1','2','3','4'],
-       width: _pagewidth * 0.45);
+  Widget _travellersDestinationWidget() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Custondropdownbuttom(
+            values: const ['1', '2', '3', '4'], width: _pagewidth * 0.40),
+        Custondropdownbuttom(
+            values: const ['Economy', 'Private', 'Business', '1 st Class'],
+            width: _pagewidth * 0.40)
+      ],
+    );
   }
 }
