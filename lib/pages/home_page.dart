@@ -50,6 +50,7 @@ class HomePage extends StatelessWidget {
         children: [
           _destinationDropDownWidget(),
           _travellersDestinationWidget(),
+          _rideButton(),
         ],
       ),
     );
@@ -84,6 +85,24 @@ class HomePage extends StatelessWidget {
             values: const ['Economy', 'Private', 'Business', '1 st Class'],
             width: _pagewidth * 0.40)
       ],
+    );
+  }
+
+  Widget _rideButton(){
+    return Container(
+      width: _pagewidth,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10)
+        ),
+
+      child: MaterialButton(onPressed: (){},
+       child: const Text(
+        "Book Ride !",
+        style: TextStyle(
+          color: Colors.black,),
+        )
+        ),
     );
   }
 }
